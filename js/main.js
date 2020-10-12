@@ -3,6 +3,8 @@
 // about us
 // portfolio gallery
 // our services
+import { servicesData } from './data/services.js';
+import { renderServices } from './components/renderServices.js';
 // our team
 // achievements
 // pricing
@@ -17,6 +19,7 @@
 // about us
 // portfolio gallery
 // our services
+renderServices(servicesData);
 // our team
 // achievements
 // pricing
