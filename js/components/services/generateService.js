@@ -8,6 +8,7 @@ function generateService(service) {
     }
 
     // logic
+    // TODO: pabaigti capitalizeText funkcijos logika
     const title = capitalizeText(service.title, true);
 
     const HTML = `<div class="col-4 col-md-6 col-sm-12">
