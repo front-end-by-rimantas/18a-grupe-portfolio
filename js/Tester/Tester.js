@@ -1,6 +1,11 @@
 class Tester {
     constructor() {
+        this.title = '';
         this.tests = [];
+    }
+
+    description(newTitle) {
+        this.title = newTitle;
     }
 
     expect(calculatedValue, expectedValue) {
@@ -26,19 +31,19 @@ class Tester {
         }
 
         if (failed.length) {
-            console.log(`%cisValidSingleService: ${positive}/${count} ok, ${count - positive}/${count} failed`, 'font-weight: bold;');
+            console.log(`%c${this.title}: ${positive}/${count} ok, ${count - positive}/${count} failed`, 'font-weight: bold;');
 
             const failedCount = failed.length;
             for (let i = 0; i < failedCount; i++) {
                 const testIndex = failed[i];
                 const testCouple = this.tests[testIndex];
 
-                console.log(`%cisValidSingleService: ${testIndex + 1} test failed`, 'color: red;');
+                console.log(`%c${this.title}: ${testIndex + 1} test failed`, 'color: red;');
                 console.log(`%c   got: ${testCouple.calculated};`, 'color: red;');
                 console.log(`%c   expected: ${testCouple.expected};`, 'color: red;');
             }
         } else {
-            console.log(`%cisValidSingleService: ${positive}/${count} ok`, 'color: green; font-weight: bold;');
+            console.log(`%c${this.title}: ${positive}/${count} ok`, 'color: green; font-weight: bold;');
         }
     }
 }

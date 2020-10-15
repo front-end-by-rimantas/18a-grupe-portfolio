@@ -3,13 +3,17 @@ import { isValidSingleService } from './isValidSingleService.js';
 
 const test = new Tester();
 
+test.description('Is valid single service');
+
 test.expect(isValidSingleService(), false);
+test.expect(isValidSingleService(null), false);
 test.expect(isValidSingleService(5), false);
 test.expect(isValidSingleService('asd'), false);
 test.expect(isValidSingleService(true), false);
 test.expect(isValidSingleService(false), false);
 test.expect(isValidSingleService([]), false);
 test.expect(isValidSingleService({}), false);
+
 test.expect(isValidSingleService({
     id: 1,
     icon: 'flaticon-computer-graphic',

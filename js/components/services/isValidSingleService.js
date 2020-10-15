@@ -3,7 +3,7 @@ import { flaticons } from '../../data/flaticons.js';
 function isValidSingleService(service, showErrors = false) {
     let errors = [];
 
-    if (typeof service !== 'object') {
+    if (typeof service !== 'object' || service === null) {
         if (showErrors) {
             console.error('ERROR: paslauga turi buti objektas.');
         }

@@ -1,9 +1,9 @@
 import { capitalizeText } from '../../utils/capitalizeText.js';
 import { isValidSingleService } from './isValidSingleService.js';
 
-function generateService(service) {
+function generateService(service, showErrors = false) {
     // params validation
-    if (!isValidSingleService(service, true)) {
+    if (!isValidSingleService(service, showErrors)) {
         return '';
     }
 
