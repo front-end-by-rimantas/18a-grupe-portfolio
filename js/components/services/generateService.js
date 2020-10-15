@@ -3,7 +3,7 @@ import { isValidSingleService } from './isValidSingleService.js';
 
 function generateService(service) {
     // params validation
-    if (!isValidSingleService(service)) {
+    if (!isValidSingleService(service, true)) {
         return '';
     }
 

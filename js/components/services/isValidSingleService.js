@@ -1,7 +1,14 @@
 import { flaticons } from '../../data/flaticons.js';
 
-function isValidSingleService(service) {
+function isValidSingleService(service, showErrors = false) {
     let errors = [];
+
+    if (typeof service !== 'object') {
+        if (showErrors) {
+            console.error('ERROR: paslauga turi buti objektas.');
+        }
+        return false;
+    }
 
     if (typeof service.active !== 'boolean') {
         errors.push('ERROR: paslaugos aktyvumo busena turi buti boolean tipo.');
@@ -13,7 +20,7 @@ function isValidSingleService(service) {
         if (service.title === '') {
             errors.push('ERROR: paslaugos pavadinimas negali buti tuscias tekstas.');
         }
-        if (service.title.length > 30) {
+        if (service.title.length > 150) {
             errors.push('ERROR: paslaugos pavadinimas yra per ilgas.');
         }
     }
@@ -44,9 +51,12 @@ function isValidSingleService(service) {
         return false;
     }
 
+    // ar as noriu spausdinti rastas klaidas?
     if (errors.length > 0) {
-        for (let i = 0; i < errors.length; i++) {
-            console.error(errors[i]);
+        if (showErrors) {
+            for (let i = 0; i < errors.length; i++) {
+                console.error(errors[i]);
+            }
         }
         return false;
     }
