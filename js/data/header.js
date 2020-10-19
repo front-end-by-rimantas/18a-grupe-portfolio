@@ -11,11 +11,11 @@ const headerData = {
         },
         {
             text: 'Portfolio',
-            link: '#'
+            link: 'portfolio'
         },
         {
             text: 'Services',
-            link: '#'
+            link: 'services'
         },
         {
             text: 'Team',

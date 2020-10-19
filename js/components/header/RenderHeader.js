@@ -1,4 +1,4 @@
-import { isHomePage } from '../../utils/isHomePage.js';
+import { URL } from '../../utils/URL.js';
 
 class RenderHeader {
     constructor(params) {
@@ -29,7 +29,7 @@ class RenderHeader {
     }
 
     generateLogo() {
-        if (isHomePage()) {
+        if (URL.isHomePage()) {
             // TODO: jei esu Home psl, tai tik nuotrauka
             return `<img src="#" alt="Xenol project logo">`;
         } else {
@@ -51,7 +51,7 @@ class RenderHeader {
             if (!this.isValidMenuLink(menuItem)) {
                 continue;
             }
-            HTML += `<a href="${menuItem.link}">${menuItem.text}</a>`;
+            HTML += `<a href="http://127.0.0.1:5500/${menuItem.link}">${menuItem.text}</a>`;
         }
         return HTML;
     }
