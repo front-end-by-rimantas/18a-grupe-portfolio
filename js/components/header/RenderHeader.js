@@ -1,3 +1,5 @@
+import { isHomePage } from '../../utils/isHomePage.js';
+
 class RenderHeader {
     constructor(params) {
         this.selector = params.selector;
@@ -27,12 +29,12 @@ class RenderHeader {
     }
 
     generateLogo() {
-        if (false) {
+        if (isHomePage()) {
             // TODO: jei esu Home psl, tai tik nuotrauka
             return `<img src="#" alt="Xenol project logo">`;
         } else {
             // TODO: jei esu kitame/vidiniame psl, tai nuotrauka nuorodoje
-            return `<a href="#">
+            return `<a href="/">
                         <img src="#" alt="Xenol project logo">
                     </a>`;
         }
