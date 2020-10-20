@@ -1,13 +1,14 @@
 const headerData = {
     selector: '#main_header',
+    logo: 'img/logo.png',
     menu: [
         {
             text: 'Home',
-            link: '#'
+            link: ''
         },
         {
             text: 'About',
-            link: '#'
+            link: 'about'
         },
         {
             text: 'Portfolio',
