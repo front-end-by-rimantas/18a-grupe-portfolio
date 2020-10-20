@@ -6,7 +6,7 @@ class RenderHeader {
         this.menuLinks = params.menu;
 
         this.DOM = null;
-        this.homeURL = null;
+        this.baseURL = URL.baseURL();
 
         this.init();
     }
@@ -51,7 +51,7 @@ class RenderHeader {
             if (!this.isValidMenuLink(menuItem)) {
                 continue;
             }
-            HTML += `<a href="http://127.0.0.1:5500/${menuItem.link}">${menuItem.text}</a>`;
+            HTML += `<a href="${this.baseURL + menuItem.link}">${menuItem.text}</a>`;
         }
         return HTML;
     }
