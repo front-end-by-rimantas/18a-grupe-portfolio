@@ -22,6 +22,12 @@ header.container-fluid {
         display: inline-block;
         float: left;
     }
+    header .hamburger {
+        display: none;
+        float: right;
+        font-size: 30px;
+        line-height: 30px;
+    }
     header nav {
         display: inline-block;
         float: right;
@@ -34,6 +40,9 @@ header.container-fluid {
             color: #fff;
             text-decoration: none;
             position: relative;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
         }
             header nav > a::after {
                 display: inline-block;
@@ -54,3 +63,23 @@ header.container-fluid {
             left: 0;
             right: 0;
         }
+
+@media (max-width: 700px) {
+    header .hamburger {
+        display: inline-block;
+    }
+    header nav {
+        display: none;
+    }
+        header nav.visible {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+        }
+            header nav.visible > a {
+                width: 100%;
+            }
+            header nav > a::after {
+                display: none;
+            }
+}

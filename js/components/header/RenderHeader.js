@@ -81,6 +81,7 @@ class RenderHeader {
 
         // output
         return `${this.generateLogo()}
+                <i class="hamburger fa fa-bars"></i>
                 <nav>
                     ${this.generateNav()}
                 </nav>`;
@@ -93,6 +94,7 @@ class RenderHeader {
 
     addEvents() {
         // registruojame scroll event listener
+        // priklausomai nuo aukscio, kuriame esu: prideda/atima .scroll klase nuo/ant header elemento
         addEventListener('scroll', () => {
             if (scrollY > 100) {
                 this.DOM.closest('header').classList.add('scroll');
@@ -100,7 +102,13 @@ class RenderHeader {
                 this.DOM.closest('header').classList.remove('scroll');
             }
         })
-        // priklausomai nuo aukscio, kuriame esu: prideda/atima .scroll klase nuo/ant header elemento
+
+        // hamburgerio click'ai
+        const hamburger = this.DOM.querySelector('.hamburger');
+        const nav = this.DOM.querySelector('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('visible');
+        })
     }
 }
 
