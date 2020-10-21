@@ -3,6 +3,7 @@ header.container-fluid {
     left: 0;
     top: 0;
     right: 0;
+    z-index: 1;
     color: #fff;
     /* TODO: kai atsiras HERO, pasalinti sita fono spalva */
     background-color: #3366ff;

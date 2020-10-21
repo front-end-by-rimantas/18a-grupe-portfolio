@@ -88,7 +88,6 @@ class RenderHeader {
     }
 
     render() {
-        console.log(this.DOM);
         this.DOM.innerHTML = this.generateHTML();
     }
 
