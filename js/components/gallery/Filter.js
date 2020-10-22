@@ -13,11 +13,31 @@ class Filter {
 
     generateHTML() {
         let HTML = '';
+
+        // isrinkta is visu darbu tagu sarasai i viena bendra
         const tags = [];
         for (let item of this.data) {
             tags.push(item.tags);
         }
-        console.log(tags);
+
+        // surinkti tik unikaliu tagu sarasa
+        const uniqueTags = [];
+        for (let i = 0; i < tags.length; i++) {
+            const vidinisArray = tags[i];
+            for (let k = 0; k < vidinisArray.length; k++) {
+                const tag = vidinisArray[k];
+                if (!uniqueTags.includes(tag)) {
+                    uniqueTags.push(tag);
+                }
+            }
+        }
+
+        // generuojame HTML
+        HTML += `<div class="tag active">All</div>`;
+        for (let tag of uniqueTags) {
+            HTML += `<div class="tag">${tag}</div>`;
+        }
+
         return HTML;
     }
 

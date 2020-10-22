@@ -2,8 +2,33 @@
     
 }
     .gallery > .filter {
-
+        text-align: center;
+        margin-bottom: 10px;
     }
+        .gallery > .filter > .tag {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            line-height: 16px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #333;
+            border-radius: 18px;
+            box-shadow: 0 0 12px #0002;
+            cursor: pointer;
+        }
+        .gallery > .filter > .tag:hover {
+            color: #36f;
+        }
+        .gallery > .filter > .tag.active {
+            color: #fff;
+            background: rgb(129,161,255);
+            background: -moz-linear-gradient(90deg, rgba(129,161,255,1) 0%, rgba(51,102,255,1) 100%);
+            background: -webkit-linear-gradient(90deg, rgba(129,161,255,1) 0%, rgba(51,102,255,1) 100%);
+            background: linear-gradient(90deg, rgba(129,161,255,1) 0%, rgba(51,102,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#81a1ff",endColorstr="#3366ff",GradientType=1);
+        }
     .gallery > .list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
