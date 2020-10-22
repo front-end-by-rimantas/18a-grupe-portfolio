@@ -51,6 +51,10 @@ class Gallery {
                 </div>`;
     }
 
+    contentUpdate(tag) {
+        this.photoListObj.update(tag);
+    }
+
     render() {
         this.DOM.innerHTML = this.generateHTML();
 
@@ -59,7 +63,8 @@ class Gallery {
 
         this.filterObj = new Filter({
             DOM: filterDOM,
-            data: this.data
+            data: this.data,
+            PARENT: this
         });
         this.photoListObj = new PhotoList({
             DOM: listDOM,

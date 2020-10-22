@@ -7,6 +7,8 @@ class PhotoList {
         this.imgPath = params.imgPath;
         this.defaultImg = params.defaultImg;
 
+        this.photosDOM = null;
+
         this.init();
     }
 
@@ -38,8 +40,27 @@ class PhotoList {
         return HTML;
     }
 
+    update(tag) {
+        tag = tag.toLowerCase();
+        console.log('rodom/nerodom:', tag);
+        for (let i = 0; i < this.data.length; i++) {
+            if (tag === 'all') {
+                this.photosDOM[i].classList.remove('hidden');
+                continue;
+            }
+
+            if (this.data[i].tags.includes(tag)) {
+                this.photosDOM[i].classList.remove('hidden');
+            } else {
+                this.photosDOM[i].classList.add('hidden');
+            }
+        }
+    }
+
     render() {
         this.DOM.innerHTML = this.generateHTML();
+
+        this.photosDOM = this.DOM.querySelectorAll('.item');
     }
 }
 

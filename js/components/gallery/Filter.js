@@ -2,6 +2,7 @@ class Filter {
     constructor(params) {
         this.DOM = params.DOM;
         this.data = params.data;
+        this.PARENT = params.PARENT;
 
         this.init();
     }
@@ -46,7 +47,13 @@ class Filter {
     }
 
     addEvents() {
-        console.log('Po turinio generavimo registruojame event listener\'ius...');
+        const tagsDOM = this.DOM.querySelectorAll('.tag');
+
+        for (let tag of tagsDOM) {
+            tag.addEventListener('click', () => {
+                this.PARENT.contentUpdate(tag.innerText);
+            })
+        }
     }
 }
 
