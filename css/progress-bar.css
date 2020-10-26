@@ -1,0 +1,71 @@
+.progress-bar {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    overflow-x: hidden;
+}
+    .progress-bar > .label {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+        line-height: 28px;
+    }
+    .progress-bar > .full-bar {
+        display: inline-block;
+        width: 100%;
+        height: 13px;
+        padding: 3px;
+        border-radius: 7px;
+        background-color: #ddd;
+    }
+        .progress-bar > .full-bar > .bar-length {
+            display: inline-block;
+            width: 0;
+            height: 7px;
+            border-radius: 4px;
+        }
+            .progress-bar .bar-length > .bar {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background: rgb(129,242,255);
+                background: -moz-linear-gradient(90deg, rgba(129,242,255,1) 0%, rgba(51,102,255,1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(129,242,255,1) 0%, rgba(51,102,255,1) 100%);
+                background: linear-gradient(90deg, rgba(129,242,255,1) 0%, rgba(51,102,255,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#81f2ff",endColorstr="#3366ff",GradientType=1);
+                position: relative;
+            }
+                .progress-bar .bar-length > .bar::before  {
+                    content: '';
+                    position: absolute;
+                    top: -17px;
+                    right: 15px;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #000;
+                    transform: rotate(45deg);
+                }
+                .progress-bar .bar-length > .bar::after  {
+                    content: attr(data-value)'%';
+                    position: absolute;
+                    top: -41px;
+                    right: 0;
+                    width: 40px;
+                    line-height: 30px;
+                    background-color: #000;
+                    color: #fff;
+                    text-align: center;
+                }
+                .progress-bar.animate .bar  {
+                    animation: loading 1s forwards;
+                }
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}

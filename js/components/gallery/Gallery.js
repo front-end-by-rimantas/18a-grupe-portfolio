@@ -76,17 +76,3 @@ class Gallery {
 }
 
 export { Gallery }
-
-
-
-
-
-/*
-new Gallery()
-
-    new Filter()
-        HTML + event
-
-    new PhotosList()
-        HTML
-*/

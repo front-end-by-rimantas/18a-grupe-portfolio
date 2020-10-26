@@ -1,6 +1,25 @@
 /* header */
 /* hero */
+#hero {
+    min-height: 100vh;
+}
 /* about us */
+.video-preview {
+    
+}
+.process {
+    
+}
+    .process > .step {
+
+    }
+        .process > .step > .fa {
+
+        }
+        .process > .step > .label {
+
+        }
+
 /* portfolio gallery */
 /* our services */
 /* our teams */
