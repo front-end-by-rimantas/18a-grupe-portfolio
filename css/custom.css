@@ -5,7 +5,72 @@
 }
 /* about us */
 .video-preview {
-    
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+    .video-preview > img {
+        display: inline-block;
+        width: 100%;
+    }
+    .video-preview > .play {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+        .video-preview > .play::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-left: 14px solid #36f;
+            border-top: 10px solid transparent;
+            border-right: 0 solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+            .video-preview > .play > .waves {
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 120px;
+                height: 120px;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                animation: wave 4s linear infinite;
+            }
+                .video-preview > .play > .waves:nth-of-type(2) {
+                    animation-delay: 1s;
+                }
+                .video-preview > .play > .waves:nth-of-type(3) {
+                    animation-delay: 2s;
+                }
+                .video-preview > .play > .waves:nth-of-type(4) {
+                    animation-delay: 3s;
+                }
+@keyframes wave {
+    0% {
+        width: 0;
+        height: 0;
+        border-color: #fff;
+    }
+    100% {
+        width: 240px;
+        height: 240px;
+        border-color: #fff0;
+    }
 }
 .process {
     
